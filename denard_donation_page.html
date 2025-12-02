@@ -1,37 +1,289 @@
-<section class="donation-box">
-  <h2>Ways to Donate</h2>
-  <p class="sub">All funds go toward Denard’s travel, lodging, food, and tournament costs.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Support Denard Bell Jr. – AYF National Championship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-  <div class="donation-methods">
+    body {
+      background: radial-gradient(circle at top, #0052cc, #02101f 60%, #000000);
+      color: #f5f5f5;
+      padding: 20px;
+    }
 
-    <div class="method">
-      <div class="tag-label">Cash App</div>
-      <p>$Jaywalker22</p>
-    </div>
+    .page-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      background: rgba(8, 17, 35, 0.96);
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-    <div class="method">
-      <div class="tag-label">Zelle</div>
-      <p>815-904-5542</p>
-    </div>
+    header {
+      background: linear-gradient(135deg, #ff5a1f, #ffb300);
+      color: #fff;
+      text-align: center;
+      padding: 22px 18px 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
 
-    <div class="method">
-      <div class="tag-label">PayPal</div>
-      <p>
-        <a href="https://www.paypal.com/donate/?business=CK6VU2KUSD6YG&no_recurring=0&item_name=Denard+Bell+Jr.+has+earned+an+incredible+opportunity%3A+he+has+been+selected+to+play+in+the+AYF+National+Championship+Tournament.&currency_code=USD"
-           target="_blank"
-           style="color:#ffe082; text-decoration:underline;">
-           Donate via PayPal
-        </a>
+    header h1 {
+      font-size: 1.9rem;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    .hero {
+      position: relative;
+      background: #020814;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transform: scale(1.01);
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: rgba(0, 0, 0, 0.78);
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-badge span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00e676;
+      box-shadow: 0 0 8px #00e676;
+    }
+
+    main {
+      padding: 24px 18px 28px;
+    }
+
+    .intro {
+      margin-bottom: 16px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #e4e8f5;
+    }
+
+    .section-title {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffb74d;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 14px;
+      line-height: 1.5;
+      font-size: 0.94rem;
+      color: #d0d7f2;
+    }
+
+    .highlight {
+      margin-top: 16px;
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, rgba(0, 71, 171, 0.85), rgba(0, 188, 212, 0.6));
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #fdfdfd;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .donation-box {
+      margin-top: 10px;
+      padding: 18px 16px 16px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff5a1f, #ff9100);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .donation-box h2 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .donation-box p.sub {
+      font-size: 0.86rem;
+      opacity: 0.95;
+      margin-bottom: 6px;
+    }
+
+    .donation-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .method {
+      background: rgba(0, 0, 0, 0.22);
+      padding: 11px 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .tag-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.9;
+      margin-bottom: 4px;
+    }
+
+    .method p {
+      word-break: break-all;
+    }
+
+    .method a {
+      color: #ffe082;
+    }
+
+    .closing {
+      margin-top: 20px;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: #ccd3f2;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #7c869f;
+      margin: 14px 0 4px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="page-wrap">
+
+    <header>
+      <h1>Support Denard Bell Jr.</h1>
+      <p>Help send him to the AYF National Championship Tournament</p>
+    </header>
+
+    <section class="hero">
+      <img src="denard-ayf-sports.jpg" alt="Denard Bell Jr. holding his football trophy in uniform" />
+      <div class="hero-gradient"></div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        AYF National Championship Bound
+      </div>
+    </section>
+
+    <main>
+      <p class="intro">
+        Denard Bell Jr. has earned an incredible opportunity: he has been selected to play in the AYF National Championship Tournament. This is a once-in-a-lifetime stage where only the most dedicated and talented youth athletes get to compete.
       </p>
-    </div>
 
-    <div class="method">
-      <div class="tag-label">Cash (In Person)</div>
-      <p>
-        Cash donations can be given directly to the family. Please contact us to arrange a
-        meet-up or drop-off time.
+      <p class="intro">
+        Denard is not only a hard-working football player; he is also a committed student who has consistently maintained honor roll every quarter. He puts in the work on the field and in the classroom, showing leadership, discipline, and character beyond his years.
       </p>
-    </div>
 
+      <h2 class="section-title">What Your Support Helps Cover</h2>
+      <ul>
+        <li>Travel to and from the tournament</li>
+        <li>Lodging during the event</li>
+        <li>Food and daily expenses</li>
+        <li>Tournament and team fees</li>
+      </ul>
+
+      <div class="highlight">
+        Every contribution goes directly toward helping Denard travel and compete on the national stage. Your support helps a hardworking student-athlete chase his dreams and represent his family, team, and community with pride.
+      </div>
+
+      <section class="donation-box">
+        <h2>Ways to Donate</h2>
+        <p class="sub">All funds go toward Denard’s travel, lodging, food, and tournament costs.</p>
+
+        <div class="donation-methods">
+
+          <div class="method">
+            <div class="tag-label">Cash App</div>
+            <p>$Jaywalker22</p>
+          </div>
+
+          <div class="method">
+            <div class="tag-label">Zelle</div>
+            <p>815-904-5542</p>
+          </div>
+
+          <div class="method">
+            <div class="tag-label">PayPal</div>
+            <p>
+              <a href="https://www.paypal.com/donate/?business=CK6VU2KUSD6YG&no_recurring=0&item_name=Denard+Bell+Jr.+has+earned+an+incredible+opportunity%3A+he+has+been+selected+to+play+in+the+AYF+National+Championship+Tournament.&currency_code=USD"
+                 target="_blank">
+                 Donate via PayPal
+              </a>
+            </p>
+          </div>
+
+          <div class="method">
+            <div class="tag-label">Cash (In Person)</div>
+            <p>
+              Cash donations can be given directly to the family. Please contact us to arrange a meet-up or drop-off time.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <p class="closing">
+        If you are unable to donate, sharing this page and keeping Denard in your thoughts is just as appreciated. Thank you for supporting Denard Bell Jr. on his journey to the AYF National Championship.
+      </p>
+    </main>
   </div>
-</section>
+
+  <footer>
+    Fundraiser for travel to the AYF National Championship Tournament for Denard Bell Jr.
+  </footer>
+</body>
+</html>
